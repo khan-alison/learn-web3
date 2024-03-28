@@ -1,12 +1,12 @@
 export enum Chain {
-  POLYGON,
+  APOTHEM,
   MAINNET,
 }
 
 interface ExampleConfig {
   chain: Chain;
   rpc: {
-    polygon: string;
+    apothem: string;
     mainnet: string;
   };
 }
@@ -14,7 +14,7 @@ interface ExampleConfig {
 export const CurrentConfig: ExampleConfig = {
   chain: Chain.MAINNET,
   rpc: {
-    polygon: "",
+    apothem: "",
     mainnet: "",
   },
 };

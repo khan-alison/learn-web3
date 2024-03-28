@@ -10,7 +10,8 @@ const buildCoinbaseWalletConnector = () => {
         new CoinbaseWallet({
           actions,
           options: {
-            URL: INPUT_CHAIN_URL,
+            url: INPUT_CHAIN_URL,
+            appName: "Coinbase",
           },
           onError: onConnectionError,
         })

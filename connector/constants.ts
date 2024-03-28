@@ -2,16 +2,17 @@ import { Chain, CurrentConfig } from "@/config";
 
 const MAINNET_CHAIN_ID = 1;
 const POLYGON_CHAIN_ID = 137;
+const APOTHEM_CHAIN_ID = 51;
 
 export const INPUT_CHAIN_ID =
-  CurrentConfig.chain === Chain.POLYGON ? POLYGON_CHAIN_ID : MAINNET_CHAIN_ID;
+  CurrentConfig.chain === Chain.APOTHEM ? POLYGON_CHAIN_ID : MAINNET_CHAIN_ID;
 export const INPUT_CHAIN_URL =
-  CurrentConfig.chain === Chain.POLYGON
-    ? CurrentConfig.rpc.polygon
+  CurrentConfig.chain === Chain.APOTHEM
+    ? CurrentConfig.rpc.apothem
     : CurrentConfig.rpc.mainnet;
 
 export const CHAIN_TO_URL_MAP = {
-  [POLYGON_CHAIN_ID]: CurrentConfig.rpc.polygon,
+  [POLYGON_CHAIN_ID]: CurrentConfig.rpc.apothem,
   [MAINNET_CHAIN_ID]: CurrentConfig.rpc.mainnet,
 };
 
@@ -33,11 +34,11 @@ export const CHAIN_INFO: { [key: string]: ChainInfo } = {
     nativeCurrency: { name: "Ether", symbol: "ETH", decimals: 18 },
     rpcUrl: CurrentConfig.rpc.mainnet,
   },
-  [POLYGON_CHAIN_ID]: {
-    explorer: "https://polygonscan.com/",
-    label: "Polygon",
-    nativeCurrency: { name: "Polygon Matic", symbol: "MATIC", decimals: 18 },
-    rpcUrl: CurrentConfig.rpc.polygon,
+  [APOTHEM_CHAIN_ID]: {
+    explorer: "https://explorer.apothem.network/",
+    label: "Apothem Testnet",
+    nativeCurrency: { name: "XDC", symbol: "XDC", decimals: 18 },
+    rpcUrl: "https://rpc.apothem.network",
   },
 };
 export const METAMASK_URL = "https://metamask.io/";
